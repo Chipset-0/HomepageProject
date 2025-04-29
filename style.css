@@ -1,0 +1,67 @@
+:root {
+    --background-accent: rgb(45, 103, 150);
+}
+
+body{
+    height:100vh;
+    width:100vw;
+    display: grid;
+    justify-items: center;
+    margin:0;
+    padding:0;
+}
+
+.main-container
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 1600px;
+    position: relative;
+}
+
+.background-decoration-top
+{
+    width: 200vw;
+    height: 80vh;
+    position: absolute;
+    top: -60vh;
+    transform: rotate(-30deg);
+    background-color: var(--background-accent);
+}
+
+.about-container
+{
+    display: flex;
+    max-width: 1200px;
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 5% 5% 0% 5%;
+}
+
+.about-image
+{
+    width:100%;
+    height:auto;
+}
+
+
+.project-container
+{
+
+}
+
+footer
+{
+    background-color: var(--background-accent);
+}
+
+@media(max-width: 800px)
+{
+    .about-container
+    {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
