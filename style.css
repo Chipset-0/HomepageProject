@@ -3,21 +3,24 @@
 }
 
 body{
-    height:100vh;
-    width:100vw;
+    height:100%;
     display: grid;
     justify-items: center;
     margin:0;
     padding:0;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .main-container
 {
     display: flex;
     flex-direction: column;
-    max-width: 1600px;
-    position: relative;
-    gap:10%
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .background-decoration-top
@@ -36,6 +39,7 @@ body{
     max-width: 1200px;
     display: grid;
     grid-template-columns: 4fr 3fr;
+    grid-template-rows: 1fr;
     margin: 5% 5% 0% 5%;
     position: relative;
     align-content: center;
@@ -71,6 +75,8 @@ body{
     height:80%;
     transform: translateX(-1%) translateY(10%);
     padding-left: 5%;
+    min-height: none;
+    display: block;
 }
 
 .about-content
@@ -78,18 +84,23 @@ body{
     width:100%;
     height:50%;
     font-size: small;
+    margin: 0;
 }
 
 
 .about-links
 {
     position:absolute;
+    left: auto;
     bottom: 0;
     right: 0;
     display: flex;
     gap:16px;
     margin-bottom: 2%;
     margin-right: 2%;
+    width:fit-content;
+    justify-content: center;
+
 }
 
 .link-button
@@ -141,6 +152,7 @@ body{
     justify-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
 }
 
 .project
@@ -155,16 +167,55 @@ body{
 {
     background-color: var(--background-accent);
     width:100vw;
-    min-height: 300px;
+    height:600px;
     color: white;
+    display: grid;
+    justify-content: center;
+    padding:50px;
+    margin-top: auto;
 }
 
-@media(max-width: 1000px)
+.footer-content
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1200px;
+    height:inherit;
+}
+
+.footer-information
+{
+    margin-right: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.footer-links
+{  
+    position: absolute;
+    bottom: 20%;
+    width: inherit;
+    justify-content: center;
+    display: flex;
+    gap: 5%;
+}
+
+.footer-image
+{
+    width: auto;
+    height:inherit;
+    aspect-ratio: 6 / 9;
+    background-image: url("assets/contact-coffee.jpg");
+    background-size: cover;
+}
+
+@media(max-width: 1300px)
 {
     .about-container
     {
         display: grid;
-        grid-template-rows: none;
+        grid-auto-rows: auto;
         grid-template-columns: 1fr;
     }
 
@@ -175,6 +226,8 @@ body{
         display: flex;
         flex-direction: column;
         height: fit-content;
+
+        
     }
 
     .about-links
@@ -182,7 +235,6 @@ body{
         left: 0px;
         right: auto;
         width: 100%;
-        justify-content: center;
         margin-right: 0;
     }
 
@@ -198,6 +250,8 @@ body{
         aspect-ratio: 6 / 9;
         max-width: 40%;
         justify-self: center;
+
+        
     }
 
     .project-container
@@ -205,4 +259,21 @@ body{
         grid-template-columns: 1fr;
     }
 
+    .footer
+    {    
+        width: auto;
+        height: fit-content;
+    }
+
+    .footer-content
+    {    
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 400px;
+    }
+
+    .footer-image
+    {
+        justify-self: center;
+        height: 100%;
+    }
 }
