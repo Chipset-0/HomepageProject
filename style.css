@@ -28,29 +28,46 @@ body{
     background-color: var(--background-accent);  
     transform-origin: bottom;
     transform: translate(0, -50%) rotate(-15deg) ;
+    z-index: -1;
 }
 
 .about-container
 {
-    display: flex;
     max-width: 1200px;
     display: grid;
     grid-template-columns: 4fr 3fr;
     margin: 5% 5% 0% 5%;
     position: relative;
+    align-content: center;
 }
 
 .about-image
 {
     width:100%;
     height:auto;
+    min-width:600px;
     z-index: 2;
+    background-image: url("assets/coffee.jpg");
+    aspect-ratio: 6 / 4;
+    background-size: cover;
+    position:relative;
+}
+
+
+.image-name
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin:5%;
+    color: white;
+    font-size: 4em;
 }
 
 .about-information
 {
     background-color: white;
-    box-shadow: 2px 2px 2px rgba(80, 79, 79, 0.589);
+    box-shadow: 4px 4px 4px rgba(80, 79, 79, 0.589);
     height:80%;
     transform: translateX(-1%) translateY(10%);
     padding-left: 5%;
@@ -63,24 +80,83 @@ body{
     font-size: small;
 }
 
+
 .about-links
 {
     position:absolute;
     bottom: 0;
     right: 0;
-    padding:2%;
+    display: flex;
+    gap:16px;
+    margin-bottom: 2%;
+    margin-right: 2%;
 }
 
+.link-button
+{
+    aspect-ratio: 1 / 1;
+    min-width: 40px;
+    width:10%;
+    background-size: cover;
+    background-color: transparent;
+    border:none;
+}
+
+.button-github
+{
+    background-image: url("assets/github.png");
+}
+
+.button-linkedin
+{
+    background-image: url("assets/linkedin.png");
+}
+
+.button-twitter
+{
+    background-image: url("assets/twitter.png");
+}
+
+.content{
+    margin: 5% 15%;
+    margin-top: 5%;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.content-title
+{
+    color: rgb(189, 189, 189);
+    font-size: 3em;
+    border-bottom: 2px solid black;
+    padding-left:5%;
+    /*text-shadow: -1px 0 rgb(73, 73, 73), 0 1px black, 1px 0 black, 0 -1px black;
+    */
+}
 
 .project-container
-{
-
+{  
+    min-height: fit-content;
+    gap: 32px;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-footer
+.project
+{
+    min-width: 400px;
+    aspect-ratio: 1 / 1;
+    background-color: aliceblue;
+    width:400px;
+}
+
+.footer
 {
     background-color: var(--background-accent);
     width:100vw;
+    min-height: 300px;
+    color: white;
 }
 
 @media(max-width: 1000px)
@@ -88,17 +164,45 @@ footer
     .about-container
     {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: none;
         grid-template-columns: 1fr;
     }
 
     .about-information
     {
         min-height: 300px;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
     }
 
     .about-links
-    {
-
+    {    
+        left: 0px;
+        right: auto;
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
     }
+
+    .about-content
+    {
+        font-size: large;
+        margin-bottom: 25%;
+    }
+
+    .about-image
+    {
+        background-image: url("assets/coffee_mobile.jpg");
+        aspect-ratio: 6 / 9;
+        max-width: 40%;
+        justify-self: center;
+    }
+
+    .project-container
+    {
+        grid-template-columns: 1fr;
+    }
+
 }
